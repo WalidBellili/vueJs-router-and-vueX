@@ -1,13 +1,22 @@
 <template>
+
+
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="products">
+      <div v-for="(product, index) in this.products" :key="index" class="product">
+      <div class="product-image" :style="{backgroundImage : 'url(' + product.image + ')'}">
+      </div>
+      <h4>{{product.title}}</h4>
+      <p class="price">US$ {{product.price}}</p>
+      <button>Add</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
 
 export default {
   name: 'HomeView',
@@ -22,7 +31,7 @@ export default {
     }
   },
   components: {
-    HelloWorld
+   
   }
 }
 </script>
