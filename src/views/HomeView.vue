@@ -28,12 +28,16 @@ export default {
   computed: {
     products() {
       return this.$store.state.products
+    },
+    productsInBag() {
+      return this.$store.state.productsInBag
     }
   },
   methods: {
     addToBag(product) {
       product.quantity = 1
       console.log(product);
+      this.$store.dispatch("addToBag", product)
     }
   },
   components: {
