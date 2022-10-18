@@ -4,6 +4,7 @@ import axios from "axios";
 export default createStore({
   state: {
     products: [],
+    productsInBag: [],
   },
   getters: {},
   mutations: {
@@ -18,6 +19,8 @@ export default createStore({
         commit("loadProducts", response.data);
       });
     },
+
+    
   },
   modules: {},
 });
